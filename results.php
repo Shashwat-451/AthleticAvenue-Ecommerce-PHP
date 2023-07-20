@@ -94,7 +94,7 @@ include("functions/functions.php");
 		</div>
 		
 		<div id="footer">
-			<h2 style="text-align:center; padding-top:30px;">&copy; 2016 by Aviral Srivastava</h2>
+			<h2 style="text-align:center; padding-top:30px;">&copy; Shashwat Mishra 2023</h2>
 		
 		</div>
 		

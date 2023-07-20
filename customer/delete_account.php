@@ -13,6 +13,6 @@ if(isset($_POST['yes'])){
 	echo "<script>window.open('../index.php','_self')</script>";
 }
 else{
-	echo "dont fuck around"; 
+	echo "error"; 
 }
 ?>
