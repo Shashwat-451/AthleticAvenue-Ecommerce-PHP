@@ -14,16 +14,99 @@ include 'config.php';
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Orders || BOLT Sports Shop</title>
+    <title>Athletics Avenue</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <script src="js/vendor/modernizr.js"></script>
+
+    <style>
+      body{
+        background-color: #f5f5f5;
+      }
+      .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width:1200px;
+      }
+      .items{
+        width: 50%;
+        height: auto;
+        padding: 20px;
+        text-align: center;
+        
+      
+      }
+      h1{
+        
+            font-family:Georgia;
+            font-size: 3rem;
+            color:black;
+            
+      }
+      h5{
+        font-family:Georgia;
+            font-size: 1.2rem;
+            color:black;
+      }
+      #item1{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        flex-basis:30%;
+        align-self:center;
+      }
+      .btn{
+        margin-top:30px;
+        background-color: black;
+        color:white;
+        padding: 20px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-family:Georgia;
+        font-size: 1rem;
+      }
+      .btn:hover{
+        background-color: black;
+        color:white;
+      }
+      .top-bar-section ul li > a {
+    display: block;
+    width: 100%;
+    color: white;
+    padding: 10px 0 20px 0;
+  margin-top:15px;
+    padding-left: 15px;
+    font-family: Georgia;
+    font-size: 1.1rem;
+    font-weight: normal;
+    text-transform: none;
+}
+.top-bar {
+    overflow: hidden;
+    height: 65px;
+    line-height: 45px;
+    position: relative;
+    background: #333333;
+    margin-bottom: 0;
+}
+.logo{
+  font-family:Georgia;
+  font-size: 1.1rem;
+  color:white;
+  text-decoration: none;
+}
+      </style>
+
+
   </head>
   <body>
 
     <nav class="top-bar" data-topbar role="navigation">
       <ul class="title-area">
         <li class="name">
-          <h1><a href="index.php">BOLT Sports Shop</a></h1>
+        <h1  style="margin-top:15px"><a class="logo" href="index.php">Athletics Avenue</a></h1>
+
         </li>
         <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
       </ul>
@@ -31,11 +114,11 @@ include 'config.php';
       <section class="top-bar-section">
       <!-- Right Nav Section -->
         <ul class="right">
-          <li><a href="about.php">About</a></li>
+        
           <li><a href="products.php">Products</a></li>
           <li><a href="cart.php">View Cart</a></li>
           <li class="active"><a href="orders.php">My Orders</a></li>
-          <li><a href="contact.php">Contact</a></li>
+         
           <?php
 
           if(isset($_SESSION['username'])){
@@ -43,6 +126,7 @@ include 'config.php';
             echo '<li><a href="logout.php">Log Out</a></li>';
           }
           else{
+            alert("Please Login to continue");
             echo '<li><a href="login.php">Log In</a></li>';
             echo '<li><a href="register.php">Register</a></li>';
           }
@@ -65,7 +149,7 @@ include 'config.php';
           if($result) {
             while($obj = $result->fetch_object()) {
               //echo '<div class="large-6">';
-              echo '<p><h4>Order ID ->'.$obj->id.'</h4></p>';
+              echo '<p><h4>Order ID ::'.$obj->id.'</h4></p>';
               echo '<p><strong>Date of Purchase</strong>: '.$obj->date.'</p>';
               echo '<p><strong>Product Code</strong>: '.$obj->product_code.'</p>';
               echo '<p><strong>Product Name</strong>: '.$obj->product_name.'</p>';
@@ -91,7 +175,7 @@ include 'config.php';
       <div class="small-12">
 
         <footer style="margin-top:10px;">
-           <p style="text-align:center; font-size:0.8em;">&copy; BOLT Sports Shop. All Rights Reserved.</p>
+        <p style="text-align:center; font-size:0.8em;">&copy; Athletics Avenue. All Rights Reserved.</p>
         </footer>
 
       </div>
